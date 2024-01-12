@@ -16,7 +16,7 @@ variable "vpc_cidr" {
 
 variable "vpc_name" {
   type    = string
-  default = "dsag-hackathon-2024-vpc"
+  default = "dsag-hackathon-vpc"
 }
 
 variable "subnet_cidr" {
@@ -26,10 +26,26 @@ variable "subnet_cidr" {
 
 variable "igw_name" {
   type    = string
-  default = "dsag-hackathon-2024-igw"
+  default = "dsag-hackathon-igw"
 }
 
 variable "subnet_name" {
   type    = string
-  default = "dsag-hackathon-2024-subnet"
+  default = "dsag-hackathon-subnet"
+}
+
+# Admin Server Variables
+variable "admin-server-name" {
+  type    = string
+  default = "dsag-hackathon-admin-server"
+}
+
+variable "admin-server-size" {
+    type    = string
+    default = "t3.micro"
+}
+
+variable "admin-server-security-group-name" {
+    type    = string
+    default = "dsag-hackathon-admin-server-security-group"  
 }
