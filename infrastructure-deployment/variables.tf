@@ -49,3 +49,17 @@ variable "admin-server-security-group-name" {
     type    = string
     default = "dsag-hackathon-admin-server-security-group"  
 }
+
+# S4HANA Server Variables
+variable "s4_hana_ec2_name" {
+  type    = string
+  default = "dsag-s4hana-server"
+}
+variable "s4_hana_security_group_name" {
+    type    = string
+    default = "dsag-s4hana-security-group"
+}
+variable "s4_hana_instance_type" {
+    type    = string
+    default = "m5.2xlarge"
+}
