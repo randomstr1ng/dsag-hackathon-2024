@@ -8,9 +8,17 @@
 ```bash
 git clone --recurse-submodules  git@github.com:randomstr1ng/dsag-hackathon-2024.git
 ```
-- deploy environment
+- prepare deployment
 ```bash
 cd infrastructure-deployment
 terraform init
+```
+- add `terraform.tfvars` file with the following content
+```terraform
+aws_profile = <your aws profile>
+aws_region = <your aws region>
+```
+- deploy infrastructure
+```bash
 terraform apply
 ```
