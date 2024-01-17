@@ -21,5 +21,5 @@ output "s4hana-server-1-private-ip" {
 }
 output "s4hana-server-1-public-ip" {
     description = "value of the public IP address of the S4HANA server"
-    value = aws_eip.s4hana-server-1-eip.public_ip
+    value = aws_eip.s4hana-1_eip.public_ip
 }
