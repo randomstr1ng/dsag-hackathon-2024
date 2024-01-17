@@ -8,3 +8,7 @@ module "sap-s4hana" {
   subnet-id           = aws_subnet.subnet.id
   instance_type       = var.s4_hana_instance_type
 }
+resource "aws_eip" "s4hana_eip" {
+  for_each = toset(module.sap-s4hana.s4-hana_instance_id)
+  instance = module.sap-s4hana.[each.value]
+}
