@@ -13,3 +13,13 @@ output "admin-server-public-ip" {
     description = "value of the public IP address of the admin server"
     value = aws_eip.admin-server-eip.public_ip
 }
+
+# Output IP Address of S4HANA Server
+output "s4hana-server-1-private-ip" {
+    description = "value of the private IP address of the S4HANA server"
+    value = module.sap-s4hana.private_ip
+}
+output "s4hana-server-1-public-ip" {
+    description = "value of the public IP address of the S4HANA server"
+    value = aws_eip.s4hana-server-1-eip.public_ip
+}
