@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <title>Hackathon | DSAG Technologietage 2024</title>
+    <meta property="og:title" content="Hackathon"">
+    <link rel="stylesheet" href="./style.css">
+    <link rel="icon" href="./favicon.ico">
+  </head>
+  <body>
+
+    <header>
+      <h1>
+        <a href="#home">Hackathon | DSAG Technologietage 2024</a>
+      </h1>
+      <nav>
+        <a href="#calc">SAP Systems</a>
+        <a href="#debug">Jump Host</a>
+      </nav>
+
+    </header>
+
+    <main>
+
+      <section id="home">
+
+        <center>
+            <p></p>
+            <a href="https://www.cbs-consulting.com/hackathon-2024/" target="_blank">
+            <img src="./images/banner.png" width="750">
+            </a>
+            <p></p>
+              <table border="0">
+                <caption>Gesponsert von:</caption>
+                <tr>
+                  <td><a href="https://www.cbs-consulting.com/" target="_blank"><img src="./images/cbs-logo.png" width="200" alt="CBS Consulting" style="background-color:white;"></a></td>
+                  <td><a href="https://securitybridge.com/" target="_blank"><img src="./images/securitybridge-logo.png" width="200" alt="SecurityBridge"></a></td>
+                  <td><a href="https://dsag.de/" target="_blank"><img src="./images/dsag-logo.png" width="200" alt="DSAG"></a></td>
+                </tr>
+              </table>
+        </center>
+      </section>
+
+      <section id="calc">
+
+        <h1>Lenght Converter</h1>
+        <h2>Convert feet to centimeter (cm) and vise-versa</h2>
+
+        <p>As the Drone only accepts only centimer for any disctance, this calculator will help you to convert feet to centimeter (cm) and centimeter (cm) to feet.</p>
+        <h1>Unit Conversion</h1>
+        <form id="conversionForm">
+            <input type="number" id="value" name="value" step="any" required>
+            <select id="conversionType" name="conversionType" required>
+                <option value="cm_to_ft">cm to ft</option>
+                <option value="ft_to_cm">ft to cm</option>
+            </select>
+            <button type="submit">Convert</button>
+        </form>
+        <br>
+        <div id="resultContainer" style="display: none;">
+          <p>Result: <span id="convertedResult"></span></p>
+        </div>
+        <script>
+            document.getElementById("conversionForm").addEventListener("submit", function(event) {
+                event.preventDefault();
+                const value = parseFloat(document.getElementById("value").value);
+                const conversionType = document.getElementById("conversionType").value;
+                let result;
+                if (conversionType === "cm_to_ft") {
+                    data = value + "/30.48"; // Conversion factor from cm to ft
+                } else {
+                    data = value + "*30.48"; // Conversion factor from ft to cm
+                }
+                // Sending the calculation data to the API endpoint
+                fetch("/tools/calc", {
+                    method: "POST",
+                    headers: {
+                        "Content-Type": "application/json"
+                    },
+                    body: JSON.stringify({ calc: data })
+                })
+                .then(response => response.json())
+                .then(data => {
+                    // Displaying the result
+                    document.getElementById("convertedResult").innerHTML = data.toFixed(2);
+                    document.getElementById("resultContainer").style.display = "block";
+                })
+                .catch(error => {
+                    // Displaying the error
+                    console.error("Error:", error);
+                });
+            });
+        </script>
+      </section>
+      <section id="debug">
+
+        <h1>API Debug & Troubelshooting</h1>
+        <p>This Section provide some mechanism an tools to troubleshoot the API itself and the Communication to the Drone</p>
+        <ul>
+            <li><a href="/status/connection-test">Middleware connection test</a></li>
+            <li><a href="/status/os-info">OS System Info</a></li>
+            <li><a href="{{ url_for('static', filename='tello-sdk.pdf') }}">Drone SDK Documentation</a></li>
+        </ul>
+        <h1>Middleware Status Information</h1>
+        <ul>
+          <li><b>Server IP:</b> {{ middleware_ip }}</li>
+          <li><b>Server Port:</b> {{ middleware_port }}</li>
+        </ul>
+      </section>
+    </main>
+  </body>
+</html>
