@@ -63,6 +63,6 @@ resource "aws_security_group" "jump-host-security_group" {
 # Create Elastic IP for Admin Server
 
 resource "aws_eip" "jump-host-eip" {
-  for_each = toset(aws_instance.jump-host)
-  instance = each.value.id
+  count = var.amount_of_jump_hosts
+  instance = aws_instance.jump-host[count.index].id
 }
