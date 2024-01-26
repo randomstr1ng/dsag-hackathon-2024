@@ -87,5 +87,5 @@ variable "amount_of_jump_hosts" {
 
 variable "jump_host_ami" {
     type    = string
-    default = "ami-0d8f6eb4f641ef691"
+    default = "ami-09644592a343dacc7"
 }
