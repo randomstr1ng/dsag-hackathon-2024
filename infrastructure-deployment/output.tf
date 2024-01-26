@@ -33,3 +33,7 @@ output "s4hana-server-2-public-ip" {
 }
 
 # Output IP Address of Jump Hosts
+output "jump-host-public-ip" {
+    description = "value of the public IP address of the jump host"
+    value = ["${aws_eip.jump-host-eip.*.public_ip}"]
+}
