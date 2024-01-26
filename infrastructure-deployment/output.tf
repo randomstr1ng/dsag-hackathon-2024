@@ -31,3 +31,5 @@ output "s4hana-server-2-public-ip" {
     description = "value of the public IP address of the S4HANA server"
     value = aws_eip.s4hana-2_eip.public_ip
 }
+
+# Output IP Address of Jump Hosts
