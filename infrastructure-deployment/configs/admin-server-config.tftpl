@@ -1,9 +1,14 @@
 #!/bin/bash
 sudo apt-get update
-sudo apt-get -qy install apache2
+sudo apt-get -qy install apache2 php libapache2-mod-php
 
 # Setup Website
 sudo rm -rf /var/www/html/*
+echo "${s4-private-ip-1}" > s4-private-ip-1.txt
+echo "${s4-private-ip-2}" > s4-private-ip-2.txt
+echo "${s4-public-ip-1}" > s4-public-ip-1.txt
+echo "${s4-public-ip-2}" > s4-public-ip-2.txt
+
 curl https://raw.githubusercontent.com/randomstr1ng/dsag-hackathon-2024/main/infrastructure-deployment/website/favicon.ico -o /var/www/html/favicon.ico
-curl https://raw.githubusercontent.com/randomstr1ng/dsag-hackathon-2024/main/infrastructure-deployment/website/index.html -o /var/www/html/index.html
+curl https://raw.githubusercontent.com/randomstr1ng/dsag-hackathon-2024/main/infrastructure-deployment/website/index.php -o /var/www/html/index.php
 curl https://raw.githubusercontent.com/randomstr1ng/dsag-hackathon-2024/main/infrastructure-deployment/website/style.css -o /var/www/html/style.css

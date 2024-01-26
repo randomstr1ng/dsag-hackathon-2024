@@ -27,7 +27,7 @@ resource "aws_instance" "admin-server" {
   key_name               = aws_key_pair.key_pair.key_name
   vpc_security_group_ids = [aws_security_group.admin-server-security_group.id]
   subnet_id              = aws_subnet.subnet.id
-  user_data              = base64encode(templatefile("${path.module}/configs/admin-server-config.tftpl", {})) 
+  user_data              = base64encode(templatefile("${path.module}/configs/admin-server-config.tftpl", {s4-private-ip-1 = module.sap-s4hana-1.private_ip, s4-private-ip-2 = module.sap-s4hana-2.private_ip, s4-public-ip-1 = aws_eip.s4hana-1_eip.public_ip, s4-public-ip-2 = aws_eip.s4hana-2_eip.public_ip }))
 
   tags = {
     Name = var.admin-server-name
