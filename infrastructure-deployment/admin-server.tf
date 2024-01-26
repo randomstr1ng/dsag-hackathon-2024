@@ -34,7 +34,7 @@ resource "aws_instance" "admin-server" {
   }
 
   root_block_device {
-    volume_size = 50
+    volume_size = 15
   }
 }
 

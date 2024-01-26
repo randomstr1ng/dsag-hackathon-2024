@@ -63,3 +63,29 @@ variable "s4_hana_instance_type" {
     type    = string
     default = "m5.2xlarge"
 }
+
+# Jump Host variables
+variable "jump_host_name" {
+  type    = string
+  default = "dsag-hackathon-jump-host"
+}
+
+variable "jump_host_security_group_name" {
+    type    = string
+    default = "dsag-hackathon-jump-host-security-group"
+}
+
+variable "jump_host_instance_type" {
+    type    = string
+    default = "t3.large"
+}
+
+variable "amount_of_jump_hosts" {
+    type    = number
+    default = 2
+}
+
+variable "jump_host_ami" {
+    type    = string
+    default = "ami-0d8f6eb4f641ef691"
+}
