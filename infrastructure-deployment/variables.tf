@@ -77,12 +77,12 @@ variable "jump_host_security_group_name" {
 
 variable "jump_host_instance_type" {
     type    = string
-    default = "t3.large"
+    default = "m5.large"
 }
 
 variable "amount_of_jump_hosts" {
     type    = number
-    default = 2
+    default = 6
 }
 
 variable "jump_host_ami" {
