@@ -61,6 +61,15 @@
               <li><p><b>Interne IP Addresse:</b> <?php include('s4-private-ip-2.txt'); ?></p></li>
             <li><p><b>Öffentliche IP Addresse:</b> <?php include('s4-public-ip-2.txt'); ?></p></li>
           </ul>
+          <p></p>
+          <details>
+            <summary><b>Credentials</b><summary>
+            <p></p>
+            <ul>
+              <li><b>Benutzernamen: </b>SAP* / Developer / DDIC</li>
+              <li><b>Passwörter: </b>ABAPtr1909</li>
+          </details>
+          <p>Mehr information zu den System finden sich auf <a href="https://hub.docker.com/r/sapse/abap-platform-trial">Dockerhub</p>
         </ul>
         <h2><a href="https://abapexperts-my.sharepoint.com/:f:/g/personal/marc_eisenhardt_securitybridge_com/Eg91-lhP2FlHts_Qk6auoVkBNdWRY0ZwEp0YtpT6NOEE3w?e=pEVGN7" target="_blank">SAP Client Downloads</a></h2>
         <p></p>
