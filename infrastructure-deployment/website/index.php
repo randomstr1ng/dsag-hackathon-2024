@@ -58,7 +58,7 @@
           <ul>
             <li><p><b>SID:</b> A4H</p></li>
             <li><p><b>Instanz Nr.:</b> 00</p></li>
-              <li><p><b>Interne IP Addresse:</b> <?php include('s4-private-ip-2.txt'); ?></p></li>
+            <li><p><b>Interne IP Addresse:</b> <?php include('s4-private-ip-2.txt'); ?></p></li>
             <li><p><b>Öffentliche IP Addresse:</b> <?php include('s4-public-ip-2.txt'); ?></p></li>
           </ul>
         </ul>
@@ -71,7 +71,9 @@
               <li><b>Passwörter: </b>ABAPtr1909</li>
             </ul>
           </details>
+          <p></p>
           <p>Mehr information zu den System finden sich auf <a href="https://hub.docker.com/r/sapse/abap-platform-trial" target="_blank">Dockerhub</p>
+          <p></p>
         <h2><a href="https://abapexperts-my.sharepoint.com/:f:/g/personal/marc_eisenhardt_securitybridge_com/Eg91-lhP2FlHts_Qk6auoVkBNdWRY0ZwEp0YtpT6NOEE3w?e=pEVGN7" target="_blank">SAP Client Downloads</a></h2>
         <p></p>
         <br>
