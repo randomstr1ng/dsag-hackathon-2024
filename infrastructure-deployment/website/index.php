@@ -68,6 +68,7 @@
             <ul>
               <li><b>Benutzernamen: </b>SAP* / Developer / DDIC</li>
               <li><b>Passwörter: </b>ABAPtr1909</li>
+            </ul>
           </details>
           <p>Mehr information zu den System finden sich auf <a href="https://hub.docker.com/r/sapse/abap-platform-trial">Dockerhub</p>
         </ul>
